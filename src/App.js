@@ -1,14 +1,20 @@
-import Counter from "./Components/Main";
+import Counter from "./Components/Main/Main";
 
-import { CounterProvider } from "../src/providers/Context"
+import { CounterProvider } from "../src/providers/Context";
+import Header from "./Components/Header/Header";
+
+import { body } from "./StyleGlobal";
+import { ThemeProvider } from "./providers/Theme";
 
 export default function App() {
-
   return (
-    <CounterProvider>
-      <Counter />
-    </CounterProvider>
+    <ThemeProvider>
+      <CounterProvider>
+        <body>
+          <Header />
+          <Counter />
+        </body>
+      </CounterProvider>
+    </ThemeProvider>
   );
 }
-
-
